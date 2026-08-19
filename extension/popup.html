@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>News Credibility</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="app" class="card">
+    <header class="top">
+      <div class="brand">
+        <img src="assets/icon48.png" alt="logo" />
+        <div>
+          <div class="title">News Credibility</div>
+          <div class="subtitle">Quick check — evidence & AI</div>
+        </div>
+      </div>
+      <button id="refreshBtn" class="icon-btn" title="Refresh">⟳</button>
+    </header>
+
+    <main class="main-area">
+      <section id="page-info" class="page-info">
+        <div class="origin-block">
+          <div class="origin-title">Source of Origin Analysis</div>
+          <a id="originLink" class="origin-link" href="#" target="_blank">—</a>
+        </div>
+        <h3 id="headline">—</h3>
+      </section>
+
+      <section class="score-area">
+        <div class="meter">
+          <svg class="progress-ring" width="140" height="140">
+            <circle class="bg" cx="70" cy="70" r="56" stroke-width="12" fill="transparent"></circle>
+            <circle id="progressCircle" class="fg" cx="70" cy="70" r="56" stroke-width="12" fill="transparent" stroke-linecap="round"></circle>
+          </svg>
+          <div class="percent">
+            <div id="percentNumber">—%</div>
+            <div id="model_version" class="model">—</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <label class="anon-label"><input type="checkbox" id="anonymousMode"/> Anonymous Mode</label>
+          <button id="checkBtn" class="btn primary">Check Page</button>
+          <button id="openSiteBtn" class="btn">Open Source</button>
+        </div>
+      </section>
+
+      <section id="result" class="result" style="display:none;">
+        <div class="result-header">
+          <div id="categoryBadge" class="badge neutral">—</div>
+          <div id="verdict" class="verdict-text">—</div>
+        </div>
+        <div id="summary" class="summary">
+          <h4>Summary</h4>
+          <div id="summaryText">—</div>
+          <div id="readLink" class="read-link"></div>
+        </div>
+        <div id="flags" class="flags"></div>
+        <div id="evidence" class="evidence"></div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <small>Privacy: Anonymous mode keeps checks local.</small>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

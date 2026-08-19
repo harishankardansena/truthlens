@@ -1,0 +1,1 @@
+TruthLens Phase2 full scaffold. Run: python manage.py migrate; python manage.py runserver
