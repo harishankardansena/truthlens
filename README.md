@@ -1,3 +1,4 @@
+
 # 🔎 TruthLens
 
 ### AI-Powered Fake News Detection System
@@ -16,6 +17,8 @@ TruthLens aims to provide users with a quick way to analyze news content using N
 
 > **Analyze the content. Understand the result. Think before you trust.**
 
+---
+
 ## ✨ Features
 
 - 📰 **News Content Analysis** — Enter a news article or text for analysis.
@@ -26,13 +29,15 @@ TruthLens aims to provide users with a quick way to analyze news content using N
 - 🖥️ **Web Application** — Includes a Django-based application for the broader TruthLens system.
 - ⚡ **Quick Analysis** — Users can submit content and receive a prediction through the interface.
 
-  ## 🏗️ System Architecture
+---
+
+## 🏗️ System Architecture
 
 TruthLens is organized into three major components:
 
 ```text
                     ┌──────────────────────┐
-                    │       User           │
+                    │        User          │
                     └──────────┬───────────┘
                                │
                                ▼
@@ -68,8 +73,19 @@ TruthLens is organized into three major components:
                     ┌──────────────────────┐
                     │   Real / Fake Result │
                     └──────────────────────┘
+````
 
-                    ## 🧠 Machine Learning
+### 🔄 Processing Flow
+
+1. **Input** — The user provides news content for analysis.
+2. **Preprocessing** — The text is cleaned and normalized.
+3. **Vectorization** — The cleaned text is transformed using the trained vectorizer.
+4. **Classification** — The trained machine-learning model processes the transformed input.
+5. **Prediction** — TruthLens returns a Real/Fake classification.
+
+---
+
+## 🧠 Machine Learning
 
 TruthLens uses a trained machine-learning pipeline to classify news content.
 
@@ -77,14 +93,14 @@ TruthLens uses a trained machine-learning pipeline to classify news content.
 
 Before prediction, the input text is cleaned by:
 
-- Converting text to lowercase
-- Removing bracketed content
-- Removing non-word characters
-- Removing URLs
-- Removing HTML tags
-- Removing punctuation
-- Removing newline characters
-- Removing words containing digits
+* Converting text to lowercase
+* Removing bracketed content
+* Removing non-word characters
+* Removing URLs
+* Removing HTML tags
+* Removing punctuation
+* Removing newline characters
+* Removing words containing digits
 
 ### 🔹 Feature Transformation
 
@@ -116,19 +132,22 @@ Trained ML Model
 Prediction
      ↓
 Real / Fake
+```
+
+---
 
 ## 🛠️ Tech Stack
 
-| Category | Technologies |
-|---|---|
-| **Programming** | Python, JavaScript |
-| **Frontend** | HTML, CSS, JavaScript |
-| **Backend** | Django |
-| **Machine Learning** | Scikit-learn, Logistic Regression |
-| **NLP** | Text preprocessing, vectorization |
-| **Model Storage** | Joblib |
-| **Browser Extension** | JavaScript, HTML, CSS |
-| **Development** | Jupyter Notebook, Git, GitHub |
+| Category              | Technologies                      |
+| --------------------- | --------------------------------- |
+| **Programming**       | Python, JavaScript                |
+| **Frontend**          | HTML, CSS, JavaScript             |
+| **Backend**           | Django                            |
+| **Machine Learning**  | Scikit-learn, Logistic Regression |
+| **NLP**               | Text preprocessing, vectorization |
+| **Model Storage**     | Joblib                            |
+| **Browser Extension** | JavaScript, HTML, CSS             |
+| **Development**       | Jupyter Notebook, Git, GitHub     |
 
 ---
 
@@ -152,3 +171,164 @@ truthlens/
 ├── .env.example
 ├── .gitignore
 └── README.md
+```
+
+### Component Overview
+
+**`backend/`**
+Contains the Django-based web application and backend functionality.
+
+**`extension/`**
+Contains the browser extension interface and related extension files.
+
+**`ml/`**
+Contains the machine-learning application, trained model, and vectorizer used for news classification.
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/harishankardansena/truthlens.git
+cd truthlens
+```
+
+### 2. Set Up the Python Environment
+
+```bash
+python -m venv venv
+```
+
+#### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+#### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+### 3. Install ML Dependencies
+
+```bash
+cd ml
+pip install -r requirements.txt
+```
+
+### 4. Run the ML Application
+
+```bash
+streamlit run app.py
+```
+
+The application will start locally and provide a browser URL where you can enter news content for analysis.
+
+---
+
+## 🚀 Running the Full Project
+
+TruthLens contains multiple components.
+
+### 🧠 Machine Learning Application
+
+```bash
+cd ml
+streamlit run app.py
+```
+
+### 🌐 Django Backend
+
+From the backend directory:
+
+```bash
+cd backend
+python manage.py runserver
+```
+
+The Django application will then be available on the local development server.
+
+### 🌐 Browser Extension
+
+The extension can be loaded through your browser's developer/extension settings using the files inside:
+
+```text
+extension/
+```
+
+---
+
+## 🔐 Environment Variables
+
+If the backend requires environment-specific configuration, create a `.env` file based on:
+
+```text
+.env.example
+```
+
+**Never commit real API keys, passwords, secret keys, or other credentials to GitHub.**
+
+---
+
+## 📸 Screenshots
+
+Screenshots of the TruthLens interface can be added here.
+
+```text
+screenshots/
+├── dashboard.png
+├── extension.png
+└── prediction.png
+```
+
+---
+
+## 🔮 Future Scope
+
+Potential future improvements include:
+
+* 🔍 More advanced claim analysis
+* 🌐 Integration with external fact-checking services
+* 🤖 LLM-assisted analysis
+* 📊 Confidence and credibility scoring
+* 📰 Automatic news/article extraction
+* 🗂️ Prediction history
+* 📈 Improved model evaluation and accuracy
+* 🌍 Support for multiple languages
+
+---
+
+## 📌 Project Status
+
+**Active Development**
+
+TruthLens is being developed as an AI/ML-based misinformation detection project combining machine learning, web technologies, and browser-extension functionality.
+
+---
+
+## 👨‍💻 Author
+
+### Harishankar Dansena
+
+B.Tech Computer Science & Engineering
+
+**GitHub:**
+[https://github.com/harishankardansena](https://github.com/harishankardansena)
+
+**LinkedIn:**
+[https://www.linkedin.com/in/harishankar-dansena-6307a5234](https://www.linkedin.com/in/harishankar-dansena-6307a5234)
+
+---
+
+## ⭐ Support
+
+If you find this project interesting, consider giving the repository a ⭐ on GitHub.
+
+
+
+Then we'll move to the **screenshots section**, because that's what will make this README visually impressive.
+```
